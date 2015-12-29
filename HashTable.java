@@ -44,14 +44,16 @@ public class HashTable implements DataCounter<String> {
 		{
 			resize();
 		}
+		
 		int pointer1 = 0;
+		
 	   while( pointer1 < size)	    {
             if(array[pointer1] != null && array[pointer1].data.compareTo(d) == 0)
             {
                     entry = array[pointer1];
                     break;
             }
-            pointer1++;
+        	 pointer1++;
 	    }
 		if(entry == null)
 		{
@@ -113,11 +115,13 @@ public class HashTable implements DataCounter<String> {
 	 */
 	private static int nextPrime(int n) {
 		if (n % 2 == 0)
+		{
 			n++;
-
+		}	
 		for (;!isPrime(n); n += 2)
+		{
 			;
-
+		}
 		return n;
 	}
 
@@ -126,15 +130,22 @@ public class HashTable implements DataCounter<String> {
 	 */
 	private static boolean isPrime(int n) {
 		if (n == 2 || n == 3)
+		{
 			return true;
+		}
 
 		if (n == 1 || n % 2 == 0)
+		{
 			return false;
+		}
 
 		for (int i = 3; i * i <= n; i += 2)
+		{
 			if (n % i == 0)
+			{
 				return false;
-
+			}
+		}
 		return true;
 	}
 
@@ -153,10 +164,7 @@ public class HashTable implements DataCounter<String> {
 			if (array[i] != null) {
 				counts.add(new DataCount<String>(array[i].getData(),
 						array[i].count));
-				
-			
 			}
-			
 		}
 		
 		DataCount<String>[] countsArray = new DataCount[counts.size()];
@@ -174,6 +182,4 @@ public class HashTable implements DataCounter<String> {
 	public int getSize() {
 		return size;
 	}
-	
-
 }
