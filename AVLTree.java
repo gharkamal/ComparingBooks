@@ -25,9 +25,7 @@ public class AVLTree<E extends Comparable<E>> extends BinarySearchTree<E>
 	}
 
 	/**
-	 * 
 	 * Inserts the integer into the tree
-	 * 
 	 * @param x the integer to be inserted in the tree
 	 */
 	public void insert(E x) {
