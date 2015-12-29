@@ -1,14 +1,11 @@
 /**
  * @author Harkamal Grewal
  * @author Gurpreet Singh
- *
- * Simple class to hold a piece of data and its count. The class has package
- * access so that the various implementations of DataCounter can access its
- * contents, but not client code.
  * 
  * @param <E> type of data whose count we are recording.
  */
 class DataCount<E extends Comparable<E>> implements Comparable<DataCount<E>> {
+    
     /**
      * The data element whose count we are recording.
      */
@@ -81,12 +78,6 @@ class DataCount<E extends Comparable<E>> implements Comparable<DataCount<E>> {
  * Interface for a data structure that allows you to count the number of times
  * you see each piece of data.
  * 
- * Although you will be using this interface only with Strings, we have tried to
- * "genericize" the code as much as possible. DataCounter counts elements of an
- * unconstrained generic type E, and BinarySearchTree restricts E to Comparable
- * types. HashTable is String-only, because you'll be implementing your own
- * hashcode and will need access to the actual String contents.
- * 
  * @param <E> The type of data to be counted.
  */
 public interface DataCounter<E extends Comparable<E>> {
@@ -106,11 +97,7 @@ public interface DataCounter<E extends Comparable<E>> {
     public int getSize();
 
     /**
-     * Get an array of all of the data counts in the DataCounter structure. The
-     * array should contain exactly one DataCount instance for each unique
-     * element inserted into the structure. The elements do not need to be in
-     * any particular order.
-     * 
+     *  An array of all of the data counts in the DataCounter structure. 
      * @return an array of the data counts.
      */
     public DataCount<E>[] getCounts();
