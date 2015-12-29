@@ -5,8 +5,7 @@
 import java.io.IOException;
 
 /**
- * An executable that counts the words in a files and prints out the counts in
- * descending order. You will need to modify this file.
+ * An executable that counts the words in a files and prints out the counts in descending order. 
  */
 public class WordCount {
 	public static void main(String[] args) {
@@ -95,8 +94,8 @@ public class WordCount {
 			}
 			if(b.equals("-is"))
 			{
-					System.out.println("Time taken by Insertion Sort for sorting words : "+ Math.abs(e1-s) / 1000000000.0 + " nS");
-					System.out.println("Totally memory used by Insertion sort: " + memory + " bytes");
+				System.out.println("Time taken by Insertion Sort for sorting words : "+ Math.abs(e1-s) / 1000000000.0 + " nS");
+				System.out.println("Totally memory used by Insertion sort: " + memory + " bytes");
 			}
 			if(b.equals("-qs"))
 			{
