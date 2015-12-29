@@ -6,17 +6,16 @@
  * store the data items and counts.
  *
  * @param <E> The type of the data elements. Note that we have strengthened the
- *            constraints on E such that E is now a Comparable.
+ * constraints on E such that E is now a Comparable.
  */
-public class BinarySearchTree<E extends Comparable<E>> implements
-        DataCounter<E> {
-
+public class BinarySearchTree<E extends Comparable<E>> implements DataCounter<E> {
+   
     /**
      * The root of the binary search tree. root is null if and only if the tree
      * is empty.
      */
     protected BSTNode overallRoot;
-
+    
     /**
      * Number of nodes in the binary search tree.
      */
@@ -28,6 +27,7 @@ public class BinarySearchTree<E extends Comparable<E>> implements
      * may be accessed by subclasses of BSTCounter.
      */
     protected class BSTNode {
+            
         /**
          * The left child of this node.
          */
@@ -52,6 +52,7 @@ public class BinarySearchTree<E extends Comparable<E>> implements
          * Height of the tree
          */
         public int height;
+        
         /**
          * Create a new data node. Also takes care of incrementing the tree
          * size.
@@ -75,11 +76,11 @@ public class BinarySearchTree<E extends Comparable<E>> implements
         size = 0;
     }
 
-    /** {@inheritDoc} */
     public void incCount(E data) {
         if (overallRoot == null) {
             overallRoot = new BSTNode(data);
-        } else {
+        } 
+        else {
             // traverse the tree
             BSTNode currentNode = overallRoot;
             while (true) {
@@ -111,12 +112,11 @@ public class BinarySearchTree<E extends Comparable<E>> implements
         }
     }
 
-    /** {@inheritDoc} */
+   
     public int getSize() {
         return size;
     }
 
-    /** {@inheritDoc} */
     public DataCount<E>[] getCounts() {
     	@SuppressWarnings("unchecked")
         DataCount<E>[] counts = new DataCount[size];
@@ -126,7 +126,7 @@ public class BinarySearchTree<E extends Comparable<E>> implements
     }
 
     /**
-     * Do an inorder traversal of the tree, filling in an array of DataCount
+     * An inorder traversal of the tree, filling in an array of DataCount
      * objects with the count of each element. Doing an inorder traversal
      * guarantees that the result will be sorted by element. We fill in some
      * contiguous block of array elements, starting at index, and return the
@@ -144,33 +144,12 @@ public class BinarySearchTree<E extends Comparable<E>> implements
     }
 
     /**
-     * Dump the contents of the tree to a String (provided for debugging and
-     * unit testing purposes).
-     *
+     * Dump the contents of the tree to a String 
      * @return a textual representation of the tree.
      */
     protected String dump() {
         if (overallRoot != null)
             return dump(overallRoot);
         return "<empty tree>";
-    }
-
-    /**
-     * Dump the contents of the subtree rooted at this node to a String
-     * (provided for debugging purposes).
-     *
-     * @return a textual representation of the subtree rooted at this node.
-     */
-    protected String dump(BSTNode root) {
-        if(root == null)
-            return ".";
-
-        String out = "([" + root.data + "," + root.count + "] ";
-        out += dump(root.left);
-        out += " ";
-        out += dump(root.right);
-        out += ")";
-
-        return out;
     }
 }
