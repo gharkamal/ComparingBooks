@@ -20,7 +20,8 @@ are only counted as a single word for this statistic.
 
 To understand the Correlation we can run the command:
 
-Usage: java Correlator [ -b | -a | -h ] <filename1> <filename2>
+Usage:   
+         java Correlator [ -b | -a | -h ] <filename1> <filename2>
 • -b Use an Unbalanced BST in the backend
 • -a Use an AVL Tree in the backend
 • -h Use a Hashtable in the backend
@@ -31,3 +32,4 @@ Larger the number more the similarities between the texts.
 
 A benchmark class is also attached which provides different run times for the different algorithms implemented. We can compare speeds 
 and efficiencies that each algorithms, also view the memory usage.
+       java BenchMark [ -b | -a | -h ] [ -frequency | -num_unique ] <filename>
