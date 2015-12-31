@@ -8,11 +8,16 @@
  This command can allow us to use different searching methods to determine/print all the words:
  
              java WordCount [ -b | -a | -h ] [ -frequency | -num_unique ] <filename>
+             
 • -b Use an Unbalanced BST to implement the DataCounter
+
 • -a Use an AVL Tree
+
 • -h Use a Hashtable
+
 • -frequency Print all the word/frequency pairs, ordered by frequency, and then by the
 words in lexicographic order
+
 • -num_unique Print the number of unique words in the document. This is the total
 number of distinct (different) words in the document. Words that appear more than once
 are only counted as a single word for this statistic.
@@ -23,8 +28,11 @@ To understand the Correlation we can run the command:
 Usage:   
 
               java Correlator [ -b | -a | -h ] <filename1> <filename2>
+              
 • -b Use an Unbalanced BST in the backend
+
 • -a Use an AVL Tree in the backend
+
 • -h Use a Hashtable in the backend
 
 Running this command provides us with a number, which is associated with the similarity between the books. 
