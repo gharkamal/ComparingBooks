@@ -1,7 +1,7 @@
 # ComparingBooks
  This project is an analysis of 2 books, which allows the programmer to see if the books are written by the same author.
  
- This program should be ran using Command line or Terminal. 
+ This program should be rn using Command line.
  Have two text files saved on the computer with there locations known.
  
  
